@@ -39,7 +39,7 @@ export default function LandingPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 border border-blue-100 rounded-full text-xs font-bold tracking-widest uppercase text-primary">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              Next Gen Retail
+              Next Gen
             </div>
 
             <h1 className="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight text-slate-900">
