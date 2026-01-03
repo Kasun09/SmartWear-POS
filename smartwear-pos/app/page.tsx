@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, ShoppingBag, ShieldCheck, PieChart, CreditCard } from "lucide-react";
+import { ArrowRight, ShoppingBag, ShieldCheck, PieChart, CreditCard, Twitter, Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 
 export default function LandingPage() {
   return (
@@ -170,15 +170,76 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <footer className="w-full py-12 bg-white text-center border-t border-slate-100">
-        <div className="flex justify-center gap-6 mb-8">
-          <div className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors cursor-pointer"><span className="sr-only">Facebook</span>f</div>
-          <div className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors cursor-pointer"><span className="sr-only">Twitter</span>t</div>
-          <div className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:bg-primary hover:text-white transition-colors cursor-pointer"><span className="sr-only">Instagram</span>ig</div>
+      {/* Footer */}
+      <footer className="bg-slate-950 text-slate-300 pt-20 pb-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+
+          {/* Top Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+
+            {/* Brand Column */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-lg">SW</div>
+                <span className="font-bold tracking-tight text-xl text-white">SMARTWEAR<span className="text-primary">POS</span></span>
+              </div>
+              <p className="text-slate-500 leading-relaxed">
+                The next generation of retail management. Designed for speed, beauty, and reliability.
+              </p>
+            </div>
+
+            {/* Links Columns */}
+            <div>
+              <h4 className="font-bold text-white mb-6">Product</h4>
+              <ul className="space-y-4 text-sm font-medium text-slate-400">
+                <li><a href="#" className="hover:text-primary transition-colors">Features</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Pricing</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Hardware</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Changelog</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-white mb-6">Company</h4>
+              <ul className="space-y-4 text-sm font-medium text-slate-400">
+                <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Newsletter Column */}
+            <div>
+              <h4 className="font-bold text-white mb-6">Stay Updated</h4>
+              <p className="text-slate-500 text-sm mb-4">Subscribe to our newsletter for the latest updates.</p>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="bg-slate-900 border border-slate-800 text-white px-4 py-2.5 rounded-xl w-full text-sm focus:outline-none focus:border-primary transition-colors"
+                />
+                <button className="bg-primary text-white p-2.5 rounded-xl hover:bg-blue-600 transition-colors">
+                  <ArrowRight size={18} />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-sm text-slate-500">
+              © 2026 SmartWear POS Systems. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <a href="#" className="text-slate-500 hover:text-white transition-colors"><Twitter size={20} /></a>
+              <a href="#" className="text-slate-500 hover:text-white transition-colors"><Facebook size={20} /></a>
+              <a href="#" className="text-slate-500 hover:text-white transition-colors"><Instagram size={20} /></a>
+              <a href="#" className="text-slate-500 hover:text-white transition-colors"><Linkedin size={20} /></a>
+              <a href="#" className="text-slate-500 hover:text-white transition-colors"><Mail size={20} /></a>
+            </div>
+          </div>
         </div>
-        <p className="text-slate-400 text-sm font-medium">
-          © 2026 SmartWear POS Systems. Built for Fashion.
-        </p>
       </footer>
     </div>
   );
