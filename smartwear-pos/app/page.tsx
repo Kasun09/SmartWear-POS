@@ -21,9 +21,18 @@ export default function LandingPage() {
           <Link href="#" className="hover:text-primary transition-colors">PRICING</Link>
           <Link href="#" className="hover:text-primary transition-colors">CONTACT</Link>
         </div>
-        <button className="px-5 py-2 md:px-6 md:py-2.5 bg-slate-900 text-white text-xs md:text-sm font-semibold rounded-full hover:bg-slate-800 transition-colors shadow-lg hover:shadow-xl">
-          Get Started
-        </button>
+        <div className="flex gap-3">
+          <Link href="/login">
+            <button className="px-5 py-2 md:px-6 md:py-2.5 bg-slate-900 text-white text-xs md:text-sm font-semibold rounded-full hover:bg-slate-800 transition-colors shadow-lg hover:shadow-xl">
+              Sign In
+            </button>
+          </Link>
+          <Link href="/register">
+            <button className="px-5 py-2 md:px-6 md:py-2.5 bg-white border border-slate-200 text-slate-900 text-xs md:text-sm font-semibold rounded-full hover:bg-slate-50 transition-colors shadow-sm hover:shadow-md">
+              Register
+            </button>
+          </Link>
+        </div>
       </nav>
 
       {/* Hero Section */}
@@ -97,38 +106,40 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 px-0 md:px-0">
 
             {/* Admin Card */}
-            <motion.div
-              whileHover={{ y: -8 }}
-              className="group relative h-[480px] bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100 cursor-pointer flex flex-col"
-            >
-              <div className="h-1/2 relative bg-blue-50 overflow-hidden">
-                <Image
-                  src="/admin-real.png"
-                  alt="Admin Dashboard"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/0 transition-colors"></div>
-                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-xs font-bold shadow-sm uppercase tracking-wider text-blue-600">
-                  Analytics & Stock
-                </div>
-              </div>
-
-              <div className="h-1/2 p-8 md:p-10 flex flex-col justify-between bg-white relative">
-                <div>
-                  <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                    <PieChart size={24} />
+            <Link href="/admin">
+              <motion.div
+                whileHover={{ y: -8 }}
+                className="group relative h-[480px] bg-white rounded-[2rem] overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100 cursor-pointer flex flex-col"
+              >
+                <div className="h-1/2 relative bg-blue-50 overflow-hidden">
+                  <Image
+                    src="/admin-real.png"
+                    alt="Admin Dashboard"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/0 transition-colors"></div>
+                  <div className="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-xs font-bold shadow-sm uppercase tracking-wider text-blue-600">
+                    Analytics & Stock
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Admin Dashboard</h3>
-                  <p className="text-slate-500 leading-relaxed">
-                    Track sales in real-time, manage inventory, and view comprehensive staff reports.
-                  </p>
                 </div>
-                <div className="flex items-center text-blue-600 font-bold group-hover:gap-2 transition-all">
-                  Login as Admin <ArrowRight size={18} className="ml-2" />
+
+                <div className="h-1/2 p-8 md:p-10 flex flex-col justify-between bg-white relative">
+                  <div>
+                    <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                      <PieChart size={24} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Admin Dashboard</h3>
+                    <p className="text-slate-500 leading-relaxed">
+                      Track sales in real-time, manage inventory, and view comprehensive staff reports.
+                    </p>
+                  </div>
+                  <div className="flex items-center text-blue-600 font-bold group-hover:gap-2 transition-all">
+                    Login as Admin <ArrowRight size={18} className="ml-2" />
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
 
             {/* Cashier Card */}
             <Link href="/pos">
