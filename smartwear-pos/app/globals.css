@@ -1,25 +1,26 @@
 @import "tailwindcss";
 
-$black: #000000;
-$white: #ffffff;
-$primary-blue: #2563eb;
-/* Royal Blue */
-$primary-purple: #7c3aed;
-/* Vibrant Purple */
-$dark-bg: #0f172a;
-/* Slate 900 */
-$light-bg: #f8fafc;
-/* Slate 50 */
-
 :root {
+  /* Colors */
+  --black: #000000;
+  --white: #ffffff;
+  --primary-blue: #2563eb;
+  /* Royal Blue */
+  --primary-purple: #7c3aed;
+  /* Vibrant Purple */
+  --dark-bg: #0f172a;
+  /* Slate 900 */
+  --light-bg: #f8fafc;
+  /* Slate 50 */
+
   /* Define Primary and Secondary */
-  --primary: #{$primary-blue};
-  --secondary: #{$dark-bg};
-  --accent: #{$primary-purple};
+  --primary: var(--primary-blue);
+  --secondary: var(--dark-bg);
+  --accent: var(--primary-purple);
 
   /* Map System Colors */
-  --background: #{$white};
-  --foreground: #{$dark-bg};
+  --background: var(--white);
+  --foreground: var(--dark-bg);
 }
 
 @theme inline {
@@ -35,8 +36,8 @@ $light-bg: #f8fafc;
 @media (prefers-color-scheme: dark) {
   :root {
     /* Keeping consistent Light/Modern look as requested */
-    --background: #{$white};
-    --foreground: #{$dark-bg};
+    --background: var(--white);
+    --foreground: var(--dark-bg);
   }
 }
 
@@ -47,7 +48,7 @@ body {
   overflow-x: hidden;
 }
 
-// Custom Utilities for "High Level" UI
+/* Custom Utilities for "High Level" UI */
 .glass-panel {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
@@ -59,15 +60,16 @@ body {
 .text-gradient {
   background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .card-hoverable {
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
-    /* Blue shadow */
-  }
+.card-hoverable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+  /* Blue shadow */
 }
